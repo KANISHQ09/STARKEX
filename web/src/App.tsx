@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import './index.css';
 import {
   BarChart2, BookOpen, Clock, Settings, ChevronDown,
   TrendingUp, Wallet, Play, ArrowRight, CheckCircle,
   ArrowUp, ArrowDown, Crosshair, Maximize2, Camera,
-  Lock, Menu, X, ExternalLink, RefreshCw, Copy, Check,
-  Sliders, Shield, Zap, HelpCircle, Layers, Download
+  Lock, Menu, X, ExternalLink, RefreshCw, Check,
+  Layers, Download
 } from 'lucide-react';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -177,8 +177,6 @@ function DepthChart({ asks, bids }: { asks: OBLevel[]; bids: OBLevel[] }) {
   });
 
   const maxCum = Math.max(cumBid, cumAsk, 1);
-  const minP = Math.min(...bids.map(b=>b.price), 94);
-  const maxP = Math.max(...asks.map(a=>a.price), 106);
 
   return (
     <div style={{ width: '100%', height: 180, position: 'relative' }}>
